@@ -1,0 +1,341 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255, 248, 243, 0.95),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #edc7b6,
+            #f6ddd0 45%,
+            #e8bcae
+        );
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #4b342f;
+}
+
+
+/* WHOLE PAGE */
+
+.memories-page {
+    width: min(1100px, 92%);
+
+    margin: 0 auto;
+
+    padding: 80px 0 100px;
+
+    text-align: center;
+
+    animation: pageFade 1.2s ease;
+}
+
+
+/* OUR LITTLE CORNER */
+
+.small-title {
+    margin: 0 0 15px;
+
+    color: #b26d70;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* MAIN TITLE */
+
+h1 {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    font-size: clamp(44px, 7vw, 75px);
+
+    font-weight: 400;
+
+    line-height: 1.08;
+}
+
+
+/* INTRO */
+
+.intro {
+    max-width: 620px;
+
+    margin: 28px auto 55px;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: #6b514a;
+}
+
+
+/* MEMORY GRID */
+
+.memory-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 32px;
+}
+
+
+/* EACH MEMORY */
+
+.memory-card {
+    padding: 16px 16px 25px;
+
+    background:
+        rgba(
+            255,
+            252,
+            249,
+            0.82
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.8
+        );
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 18px 45px
+        rgba(
+            90,
+            55,
+            50,
+            0.15
+        );
+
+    transform: rotate(-1deg);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* ALTERNATE THE TILT */
+
+.memory-card:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+
+.memory-card:nth-child(3n) {
+    transform: rotate(-0.5deg);
+}
+
+
+/* HOVER */
+
+.memory-card:hover {
+    transform:
+        translateY(-8px)
+        rotate(0deg)
+        scale(1.02);
+
+    box-shadow:
+        0 25px 55px
+        rgba(
+            90,
+            55,
+            50,
+            0.22
+        );
+}
+
+
+/* PHOTO AREA */
+
+.photo-box {
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    background: #ead5cc;
+}
+
+
+/* ACTUAL PHOTO */
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* MEMORY CAPTION */
+
+.memory-card p {
+    margin: 20px 8px 0;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    color: #59413c;
+}
+
+
+/* NEXT BUTTON */
+
+.continue-button {
+    display: inline-block;
+
+    margin-top: 60px;
+
+    padding: 17px 36px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b65e64,
+            #d17b7e
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(
+            110,
+            58,
+            60,
+            0.22
+        );
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.continue-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 20px 42px
+        rgba(
+            110,
+            58,
+            60,
+            0.30
+        );
+}
+
+
+/* PAGE OPENING */
+
+@keyframes pageFade {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* TABLET */
+
+@media (max-width: 850px) {
+
+    .memory-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+}
+
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    .memories-page {
+        width: 88%;
+
+        padding: 55px 0 80px;
+    }
+
+    h1 {
+        font-size: 43px;
+    }
+
+    .intro {
+        margin-bottom: 40px;
+
+        font-size: 17px;
+    }
+
+    .memory-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .memory-card {
+        max-width: 380px;
+
+        margin: 0 auto;
+    }
+
+    .memory-card p {
+        font-size: 16px;
+    }
+
+}

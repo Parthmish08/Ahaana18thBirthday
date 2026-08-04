@@ -1,0 +1,357 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255, 248, 243, 0.95),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #edc7b6,
+            #f6ddd0 45%,
+            #e8bcae
+        );
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #4b342f;
+}
+
+
+/* WHOLE PAGE */
+
+.person-page {
+    width: min(900px, 90%);
+
+    margin: 0 auto;
+
+    padding: 80px 0 100px;
+
+    text-align: center;
+
+    animation: pageFade 1.2s ease;
+}
+
+
+/* MY BEAUTIFUL GIRL */
+
+.small-title {
+    margin: 0 0 15px;
+
+    color: #b26d70;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+/* MAIN TITLE */
+
+h1 {
+    margin: 0;
+
+    font-size: clamp(48px, 7vw, 78px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+}
+
+
+/* INTRO */
+
+.intro {
+    max-width: 650px;
+
+    margin: 28px auto 65px;
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: #6b514a;
+}
+
+
+/* EACH SECTION */
+
+.person-section {
+    position: relative;
+
+    display: flex;
+
+    gap: 30px;
+
+    align-items: flex-start;
+
+    margin-bottom: 25px;
+
+    padding: 38px 40px;
+
+    text-align: left;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.65);
+
+    border-radius: 28px;
+
+    background:
+        rgba(
+            255,
+            250,
+            247,
+            0.55
+        );
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(
+            114,
+            72,
+            65,
+            0.12
+        );
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* LITTLE MOVEMENT WHEN HOVERING */
+
+.person-section:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 25px 55px
+        rgba(
+            114,
+            72,
+            65,
+            0.18
+        );
+}
+
+
+/* 01, 02, 03, 04 */
+
+.number {
+    flex-shrink: 0;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(
+            187,
+            115,
+            117,
+            0.13
+        );
+
+    color: #b4676b;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+}
+
+
+/* TEXT AREA */
+
+.section-text {
+    flex: 1;
+}
+
+
+/* YOUR HEART / YOUR STRENGTH ETC */
+
+.section-text h2 {
+    margin: 2px 0 12px;
+
+    color: #a85f63;
+
+    font-size: 28px;
+
+    font-weight: 400;
+}
+
+
+/* PARAGRAPHS */
+
+.section-text p {
+    margin: 0;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+
+    color: #5d4640;
+}
+
+
+/* ENDING MESSAGE */
+
+.ending {
+    max-width: 650px;
+
+    margin: 55px auto 0;
+}
+
+.ending p {
+    font-size: 25px;
+
+    font-style: italic;
+
+    line-height: 1.6;
+
+    color: #8f595b;
+}
+
+
+/* OUR MEMORIES BUTTON */
+
+.continue-button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 17px 36px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b65e64,
+            #d17b7e
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(
+            110,
+            58,
+            60,
+            0.22
+        );
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.continue-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 20px 42px
+        rgba(
+            110,
+            58,
+            60,
+            0.30
+        );
+}
+
+
+/* PAGE ENTRANCE */
+
+@keyframes pageFade {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    .person-page {
+        width: 90%;
+
+        padding: 55px 0 80px;
+    }
+
+    h1 {
+        font-size: 46px;
+    }
+
+    .intro {
+        margin-bottom: 45px;
+
+        font-size: 17px;
+    }
+
+    .person-section {
+        gap: 18px;
+
+        padding: 28px 22px;
+    }
+
+    .number {
+        width: 42px;
+        height: 42px;
+
+        font-size: 12px;
+    }
+
+    .section-text h2 {
+        font-size: 24px;
+    }
+
+    .section-text p {
+        font-size: 17px;
+    }
+
+    .ending p {
+        font-size: 21px;
+    }
+
+}

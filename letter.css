@@ -1,0 +1,473 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(255, 247, 240, 0.95),
+            transparent 42%
+        ),
+        linear-gradient(
+            135deg,
+            #e9c0ae,
+            #f5d7c8 50%,
+            #e7b7a8
+        );
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #4b342f;
+}
+
+
+/* WHOLE PAGE */
+
+.message-page {
+    width: 100%;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    animation: pageEnter 1.2s ease;
+}
+
+
+/* MAIN CARD */
+
+.message-card {
+    width: 100%;
+
+    padding: 65px 55px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.5
+        );
+
+    border-radius: 35px;
+
+    background:
+        rgba(
+            255,
+            248,
+            244,
+            0.45
+        );
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 25px 70px
+        rgba(
+            103,
+            59,
+            53,
+            0.18
+        );
+}
+
+
+/* HEART */
+
+.small-heart {
+    margin-bottom: 20px;
+
+    font-size: 35px;
+
+    animation:
+        heartbeat
+        1.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* MY LOVE */
+
+.eyebrow {
+    margin: 0 0 15px;
+
+    color: #a96f6f;
+
+    font-size: 15px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+}
+
+
+/* TITLE */
+
+h1 {
+    max-width: 600px;
+
+    margin: 0 auto 25px;
+
+    font-size:
+        clamp(
+            38px,
+            6vw,
+            62px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.05;
+}
+
+
+/* INTRO */
+
+.intro {
+    max-width: 570px;
+
+    margin: 0 auto 38px;
+
+    font-size: 19px;
+
+    line-height: 1.75;
+
+    color: #6b504a;
+}
+
+
+/* AUDIO PLAYER */
+
+.audio-box {
+    max-width: 500px;
+
+    margin: 0 auto 50px;
+
+    padding: 18px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    text-align: left;
+
+    border:
+        1px solid
+        rgba(
+            158,
+            95,
+            95,
+            0.18
+        );
+
+    border-radius: 22px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.4
+        );
+
+    box-shadow:
+        0 12px 35px
+        rgba(
+            101,
+            55,
+            55,
+            0.12
+        );
+}
+
+
+/* PLAY BUTTON */
+
+.play-button {
+    width: 58px;
+
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b75f65,
+            #d07d7f
+        );
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(
+            139,
+            75,
+            77,
+            0.25
+        );
+
+    transition:
+        transform
+        0.25s
+        ease;
+}
+
+
+.play-button:hover {
+    transform: scale(1.06);
+}
+
+
+/* AUDIO TEXT */
+
+.audio-text {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.audio-text span {
+    font-size: 18px;
+}
+
+
+.audio-text small {
+    color: #a17370;
+
+    font-size: 14px;
+}
+
+
+/* BIRTHDAY LETTER */
+
+.letter {
+    position: relative;
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding: 45px 45px 50px;
+
+    text-align: left;
+
+    border-radius: 6px;
+
+    background:
+        rgba(
+            255,
+            253,
+            249,
+            0.82
+        );
+
+    box-shadow:
+        0 18px 45px
+        rgba(
+            101,
+            55,
+            55,
+            0.12
+        );
+}
+
+
+/* LITTLE HEART ON LETTER */
+
+.letter::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 24px;
+
+    color: #c98789;
+
+    font-size: 25px;
+}
+
+
+/* LETTER PARAGRAPHS */
+
+.letter p {
+    margin:
+        0
+        0
+        24px;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+
+    color: #503b36;
+}
+
+
+.letter p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* FINAL PAGE BUTTON */
+
+.continue-button {
+    display: inline-block;
+
+    margin-top: 45px;
+
+    padding: 16px 34px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b75f65,
+            #d07d7f
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(
+            110,
+            58,
+            60,
+            0.22
+        );
+
+    transition:
+        transform
+        0.3s
+        ease;
+}
+
+
+.continue-button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* PAGE ENTRANCE */
+
+@keyframes pageEnter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* HEARTBEAT */
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+
+/* PHONE */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 18px;
+    }
+
+
+    .message-card {
+        padding:
+            45px
+            25px;
+
+        border-radius: 28px;
+    }
+
+
+    h1 {
+        font-size: 40px;
+    }
+
+
+    .intro {
+        font-size: 17px;
+    }
+
+
+    .audio-box {
+        padding: 15px;
+    }
+
+
+    .letter {
+        padding:
+            38px
+            25px;
+    }
+
+
+    .letter p {
+        font-size: 17px;
+
+        line-height: 1.8;
+    }
+
+}
